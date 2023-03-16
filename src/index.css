@@ -9,7 +9,7 @@ nav {
 .goods {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 1.5rem 0;
   flex-grow: 1;
 }
@@ -24,4 +24,18 @@ nav {
 }
 .card-content {
   flex-grow: 1;
+}
+.cart {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 5;
+}
+@media (min-width: 767px) {
+  .cart {
+    top: 5rem;
+    bottom: unset;
+  }
 }

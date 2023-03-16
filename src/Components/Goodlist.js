@@ -4,19 +4,25 @@ function Goodlist(props) {
   return (
     <div className="goods container">
       {props.goods.map((item) => {
+        const { id, name, description, price, full_background } = item;
         return (
-          <div className="card" key={item.id}>
+          <div className="card" key={id}>
             <div className="card-image">
-              <img src={item.full_background} alt={item.name} />
+              <img src={full_background} alt={name} />
             </div>
             <div className="card-content">
-              <span className="card-title">{item.name}</span>
-              <p>{item.description}</p>
+              <span className="card-title">{name}</span>
+              <p>{description}</p>
             </div>
             <div className="card-action">
-              <button className="btn">BUY</button>
+              <button
+                className="btn"
+                onClick={() => props.addToBasket({ id, name, price })}
+              >
+                BUY
+              </button>
               <div className="right" style={{ fontSize: "1.5rem" }}>
-                {item.price}$
+                {price}$
               </div>
             </div>
           </div>
